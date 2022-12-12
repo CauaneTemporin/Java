@@ -60,17 +60,5 @@ public class Funcionario {
 		//this.aumento = salario+=(aumento*100/salario);
 		this.aumento = salario +=((aumento/100)*salario);
 	}
-
-	public String toString() {
-		return "Lista dos funcionários: \n"
-		+", " 
-		+ nome
-		+", "
-		+ String.format("%.2f\n", salario)
-		+"\nLista dos funcionarios:"
-		+this.id
-		+this.nome
-		+this.salario;
-	}
 	
 }

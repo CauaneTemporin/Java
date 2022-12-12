@@ -54,7 +54,7 @@ public class Program {
 						// System.out.println(x.getSalario());
 						porcentagem = false;
 					}
-					salarios += "Nome: " + x.getNome() + " salário: " + x.getSalario()+ "\n";
+					salarios += "Nome: " + x.getNome() + " salário: " +  String.format("%.2f", x.getSalario()) + "\n";
 				}
 
 				System.out.println(salarios);
