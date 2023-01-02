@@ -38,7 +38,7 @@ public class Program {
 			
 			System.out.print("Informe a data (DD/MM/YYYY): ");
 			DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-			contratos.setDate(new SimpleDateFormat());
+			Date contractDate = sdf.parse(sc.next());
 			System.out.print("Informe Valor por hora: ");
 			contratos.setHoras(sc.nextInt());
 			System.out.print("Informe quantas horas trabalhadas: ");
