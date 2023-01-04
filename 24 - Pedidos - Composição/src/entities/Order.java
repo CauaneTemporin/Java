@@ -6,7 +6,7 @@ import java.util.List;
 
 import entities.enums.OrdemStatus;
 
-public class Order {
+public class Order extends Client{
 
 	private Date moment;
 	private OrdemStatus status;
@@ -19,7 +19,6 @@ public class Order {
 	}
 
 	public Order(Date moment, OrdemStatus status, Client client) {
-		super();
 		this.moment = moment;
 		this.status = status;
 		this.client = client;
@@ -68,14 +67,12 @@ public class Order {
 		}
 		return sum;
 	}
-	
-				//"RESUMO DO PEDIDO:\n"
-				//+ "Momento do pedido: "
-				//+ "\nStatus do pedido: " + status
 				
 	@Override
 	public String retorno() {
-		return 
-				"\nCliente: " + this.nome +"(" + this.birthDate +") - " + this.email ;
+		return  "RESUMO DO PEDIDO:\n"
+				+ "Momento do pedido: "
+				+ "\nStatus do pedido: " + status
+				+ "\nCliente: " + this.nome +"(" + super.birthDate + ") - " + this.email ;
 	}
 }

@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Client {
 
-	private String nome;
-	private String email;
-	private Date birthDate;
+	protected String nome;
+	protected String email;
+	protected Date birthDate;
 	
 	public Client() {
 		
