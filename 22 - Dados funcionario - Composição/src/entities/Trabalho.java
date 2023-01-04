@@ -80,11 +80,13 @@ public class Trabalho {
 			int c_ano = cal.get(Calendar.YEAR);
 			int c_mes = 1 +cal.get(Calendar.MONTH);
 			if(ano == c_ano && mes ==c_mes) {
-				soma +=c.totalHora(); 
-			}
-			
-		}
-		
+				soma +=c.totalHora();
+				String somaValor = Double.toString(soma);
+				System.out.println("Nome: " + nome + "\n"
+				+ "Departamento: " + nivel 
+				+ "Renda total: " + somaValor);
+			}	
+		}	
 	}
 	
 }
