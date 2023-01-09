@@ -29,7 +29,7 @@ public class Program {
 				i--;
 			} else {
 				funcionarioCadastro.setId(id);
-				System.out.println("Informe o nome do funcionário: ");
+				System.out.println("Informe o nome completo do funcionário: ");
 				funcionarioCadastro.setNome(sc.next());
 				System.out.println("Informe o salário do funcionário: ");
 				funcionarioCadastro.setSalario(sc.nextDouble());
