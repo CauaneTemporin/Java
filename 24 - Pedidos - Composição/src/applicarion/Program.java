@@ -1,13 +1,12 @@
 package applicarion;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Client;
+import entities.Order;
 import entities.OrderItem;
 import entities.Product;
 import entities.enums.OrdemStatus;
@@ -40,12 +39,14 @@ public class Program {
 		System.out.print( "Nome do produto: ");
 		product.setNome(sc.next());
 		System.out.print( "Preço: ");
-		product.setPrice(sc.nextDouble());
+		product.setPriceProd(sc.nextDouble());
 		OrderItem orderItem = new OrderItem();
-		System.out.println("Quantidade: ");
+		System.out.print("Quantidade: ");
 		orderItem.setQuantity(sc.nextInt());
-		}			
+		}
 		
+		Order order = new Order();
+		System.out.println(order.toString());
 		sc.close();
 		
 	}

@@ -1,35 +1,41 @@
 package entities;
 
-public class Product {
+public class Product extends Client{
 
-	private String nome;
-	private Double price;
+	protected String nomeprod;
+	protected double priceprod = 0.0;
 	
 	public Product() {
 		
 	}
 
-	public Product(String nome, Double price) {
-		this.nome = nome;
-		this.price = price;
+	public Product(String nomeprod, Double priceprod) {
+		this.nomeprod = nomeprod;
+		this.priceprod = priceprod;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeProd() {
+		return nomeprod;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeProd(String nomeprod) {
+		this.nomeprod = nomeprod;
 	}
 
-	public Double getPrice() {
-		return price;
+	public Double getPriceProd() {
+		return priceprod;
 	}
 
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setPriceProd(Double price) {
+		this.priceprod = price;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return  "\nRESUMO DO PEDIDO:\n"
+				+ "\nCliente: " + this.nome +" (" + super.birthDate + ") - " + this.email 
+				+ "\nOrder items:"
+				+ "\n" + nomeprod + ", $" + priceprod + ", Quantidade: " ;
+	}
 	
 }

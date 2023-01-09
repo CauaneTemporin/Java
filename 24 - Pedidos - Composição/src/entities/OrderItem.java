@@ -1,11 +1,11 @@
 package entities;
 
-public class OrderItem {
+public class OrderItem extends Product {
 
-	private Integer quantity;
-	private Double price;
+	protected int quantity = 0;
+	protected double price = 0.0;
 	
-	private Product product;
+	protected Product product;
 	
 	public OrderItem() {
 		
@@ -43,6 +43,14 @@ public class OrderItem {
 	
 	public Double subTotal()
 	{
-		return quantity * price;
+		return quantity * priceprod;
+	}
+	
+	@Override
+	public String toString() {
+		return  "\nRESUMO DO PEDIDO:\n"
+				+ "\nCliente: " + this.nome +" (" + super.birthDate + ") - " + this.email 
+				+ "\nOrder items:"
+				+ "\n" + nomeprod + ", $" + priceprod + ", Quantidade: " + quantity + ", Subtotal: $" + subTotal() ;
 	}
 }

@@ -42,8 +42,9 @@ public class Client {
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
-	public String retorno() {
-		return "\nCliente: " + this.nome +"(" + this.birthDate +") - " + this.email ;
+	public String toString() {
+		return "\nRESUMO DO PEDIDO:\n"
+				+ "Cliente: " + this.nome +" (" + this.birthDate +") - " + this.email ;
 	}
 	
 }
