@@ -2,6 +2,8 @@ package applicarion;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,6 +20,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
+		List<Order> list = new ArrayList<>();
 		Client client = new Client();
 		System.out.println("Insira os dados do cliente: ");
 		System.out.print("Nome: ");
@@ -43,6 +46,7 @@ public class Program {
 		OrderItem orderItem = new OrderItem();
 		System.out.print("Quantidade: ");
 		orderItem.setQuantity(sc.nextInt());
+		
 		}
 		
 		Order order = new Order();

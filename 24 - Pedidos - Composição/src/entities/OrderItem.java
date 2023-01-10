@@ -2,8 +2,8 @@ package entities;
 
 public class OrderItem extends Product {
 
-	protected int quantity = 0;
-	protected double price = 0.0;
+	protected Integer quantity = 0;
+	protected Double price = 0.0;
 	
 	protected Product product;
 	
