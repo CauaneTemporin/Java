@@ -1,12 +1,12 @@
 package application;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Program {
 	public static void main(String[] args) {
-		File file = new File("C:\\temp\\in.txt");
+		File file = new File("C:\\Users\\55119\\Downloads\\ac.txt");
 		Scanner sc = null;
 		try {
 			sc = new Scanner(file);
@@ -14,7 +14,7 @@ public class Program {
 				System.out.println(sc.nextLine());
 			}
 		} 
-		catch (IOException e) {
+		catch (FileNotFoundException e) {
 			System.out.println("Error opening file: " + e.getMessage());
 		} 
 		finally {
