@@ -9,6 +9,11 @@ public class Program {
 		
 		//Baseado em equals e hashCode
 		//Se equals e hashCode não existir, é usada comparação de ponteiros
+		
+		//HashSet - mais rápido (operações O(1) em tabela hash) e não ordenado
+		//TreeSet - mais lento (operações O(log(n)) em árvore rubro-negra) e ordenado pelo compareTo do objeto (ou Comparator)
+		//LinkedHashSet - velocidade intermediária e elementos na ordem em que são adicionados
+		
 		Set<Integer> a = new TreeSet<>(Arrays.asList(0, 2, 4, 5, 6, 8, 10));
 		Set<Integer> b = new TreeSet<>(Arrays.asList(5, 6, 7, 8, 9, 10));
 		
