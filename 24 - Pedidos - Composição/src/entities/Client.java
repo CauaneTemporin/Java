@@ -1,5 +1,7 @@
 package entities;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Client {
@@ -7,6 +9,9 @@ public class Client {
 	protected String nome;
 	protected String email;
 	protected Date birthDate;
+	
+	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	LocalDateTime dateTime = LocalDateTime.now();
 	
 	public Client() {
 		

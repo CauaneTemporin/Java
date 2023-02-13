@@ -14,16 +14,18 @@ import entities.enums.NivelTrabalho;
 
 public class Program {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		Departamento departamento = new Departamento();
 		Trabalho trabalho = new Trabalho();
 		
+		trabalho.setDepartamento(new Departamento());
+
 		System.out.print("Informe o departamento: ");
-		departamento.setNome(sc.next());
+		trabalho.getDepartamento().setNome(sc.next());
 		System.out.println("Informe os dados do trabalhador: ");
 		System.out.print("Informe o nome: ");
 		trabalho.setNome(sc.next());
@@ -33,30 +35,32 @@ public class Program {
 		trabalho.setSalario_base(sc.nextDouble());
 		System.out.print("Informe a quantidade de contratos: ");
 		int n = sc.nextInt();
-		
+
 		for (int i = 1; i <= n; i++) {
 			Contratos contratos = new Contratos();
 			System.out.print("Informe a data (DD/MM/YYYY): ");
-			DateFormat date = new SimpleDateFormat("dd/MM/YYYY");
 			try {
-				Date contractDate = date.parse(sc.next());
+				contratos.setDate(sdf.parse(sc.next()));
 			} catch (ParseException e) {
-			  System.out.print("A data informada não respeita a formato valido");
+				System.out.print("A data informada não respeita a formato valido");
 			}
 			System.out.print("Informe Valor por hora: ");
 			contratos.setValor_hora(sc.nextDouble());
 			System.out.print("Informe quantas horas trabalhadas: ");
 			contratos.setHoras(sc.nextInt());
+			trabalho.addContrato(contratos);
 		}
 
 		System.out.print("Digite o mês e o ano para calcular o rendimento (MM/AAAA): ");
-		DateFormat date = new SimpleDateFormat("MM/YYYY");
-		try {
-			Date contractDate = date.parse(sc.next());  
-		} catch (ParseException e) {
-		  System.out.print("A data informada não respeita a formato valido");    
-		 
-		}
+		String contractDate = sc.next();
+		int month = Integer.parseInt(contractDate.substring(0, 2));
+		int year = Integer.parseInt(contractDate.substring(3));
+		
+		System.out.println("Nome : " + trabalho.getNome());
+		System.out.println("Departamento: " + trabalho.getDepartamento().getNome() );
+		System.out.println("Renda: " + month + "/" + year + ": " +trabalho.valorTotal(year, month) );
+
+	
 
 		sc.close();
 

@@ -3,7 +3,7 @@ package entities;
 public class Product extends Client{
 
 	protected String nomeprod;
-	protected Double priceprod = 0.0;
+	protected Double priceprod;
 	
 	public Product() {
 		

@@ -70,12 +70,13 @@ public class Order extends OrderItem{
 
 	@Override
 	public String toString() {
-		return  "\nRESUMO DO PEDIDO:"
-				+ "\nMomento do pedido: "
-				+ "\nStatus do pedido: " + status
-				+ "\nCliente: " + this.nome +" (" + super.birthDate + ") - " + this.email 
-				+ "\nOrder items:"
-				+ "\n" + nomeprod + ", $" + priceprod + ", Quantidade: " + quantity + ", Subtotal: $" + subTotal() 
-				+ "\nTotal: $ " + total();
+		return "\n" + "RESUMO DO PEDIDO:"
+		+ "\nMomento do pedido: " + dateTime
+		+ "\nStatus do pedido: " + status 
+		+ "\nCliente: " + client.nome +" (" + client.birthDate + ") - " + client.email 			
+		+ "\nOrder items:"
+		+ "\n" + nomeprod + ", $ " + String.format("%.2f", priceprod) + ", Quantidade: " + quantity + ", Subtotal: $ " 
+		+ String.format("%.2f", subTotal() )				
+		+ "\nTotal: $ " + String.format("%.2f", total());
 	}
 }

@@ -11,6 +11,7 @@ public class Trabalho {
 	private String nome;
 	private NivelTrabalho nivel;
 	private Double salario_base;
+
 	
 	private Departamento departamento;
 	private List<Contratos> contratos = new ArrayList<>();
@@ -72,7 +73,7 @@ public class Trabalho {
 	
 	}
 	
-	public void valorTotal(int ano, int mes) {
+	public Double valorTotal(int ano, int mes) {
 		double soma = salario_base;
 		Calendar cal = Calendar.getInstance();
 		for(Contratos c : contratos) {
@@ -81,13 +82,15 @@ public class Trabalho {
 			int c_mes = 1 +cal.get(Calendar.MONTH);
 			if(ano == c_ano && mes ==c_mes) {
 				soma +=c.totalHora();
-				String somaValor = Double.toString(soma);
-				System.out.println("Nome: " + nome + "\n"
-				+ "Departamento: " + nivel 
-				+ "Renda total: " + somaValor);
+				return soma;
 			}	
-		}	
-	}
+		}
+		return soma;
+	}		
+		
+	
+
 	
 }
+	
  
