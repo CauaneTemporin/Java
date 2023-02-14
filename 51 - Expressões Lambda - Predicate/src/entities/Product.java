@@ -16,7 +16,7 @@ public class Product {
 		this.name = name;
 	}
 	public Double getPrice() {
-		return price;
+		return price; 
 	}
 	public void setPrice(Double price) {
 		this.price = price;
