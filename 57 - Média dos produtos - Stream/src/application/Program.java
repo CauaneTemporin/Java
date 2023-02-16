@@ -32,7 +32,7 @@ public class Program {
 				list.add(new Product(fields[0], Double.parseDouble(fields[1])));
 				line = br.readLine();
 			}
-			
+			//
 			double avg = list.stream()
 					.map(p -> p.getPrice())
 					.reduce(0.0, (x,y) -> x + y) / list.size();
