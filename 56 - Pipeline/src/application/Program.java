@@ -21,7 +21,7 @@ public class Program {
 		.filter(x -> x % 2 == 0)
 		.map(x -> x * 10)
 		.collect(Collectors.toList());
-		
+		//
 		System.out.println(Arrays.toString(newList.toArray()));
 	}
 }
