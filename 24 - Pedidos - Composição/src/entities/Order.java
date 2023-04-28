@@ -15,10 +15,11 @@ public class Order extends OrderItem{
 	private List<OrderItem> items = new ArrayList<>();
 	
 	public Order() {
-		
+		super();
 	}
 
 	public Order(Date moment, OrdemStatus status, Client client) {
+		super();
 		this.moment = moment;
 		this.status = status;
 		this.client = client;
@@ -70,13 +71,15 @@ public class Order extends OrderItem{
 
 	@Override
 	public String toString() {
-		return "\n" + "RESUMO DO PEDIDO:"
-		+ "\nMomento do pedido: " + dateTime
-		+ "\nStatus do pedido: " + status 
-		+ "\nCliente: " + client.nome +" (" + client.birthDate + ") - " + client.email 			
-		+ "\nOrder items:"
-		+ "\n" + nomeprod + ", $ " + String.format("%.2f", priceprod) + ", Quantidade: " + quantity + ", Subtotal: $ " 
-		+ String.format("%.2f", subTotal() )				
-		+ "\nTotal: $ " + String.format("%.2f", total());
+		String pedido = "\n" + "RESUMO DO PEDIDO:"
+		+ "\nMomento do pedido: " + dataHoraFormatada
+		+ "\nStatus do pedido: " + status
+		+ "\nCliente: " + client.nome +" (" + sdf.format(this.birthDate) + ") - " + client.email 
+		+ "\nOrder items:";
+		for(OrderItem x : items) {
+			pedido += x.toString();
+		}
+		pedido +=  "\nTotal: $ " + String.format("%.2f", total());
+		return pedido;
 	}
 }

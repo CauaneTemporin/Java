@@ -8,10 +8,11 @@ public class OrderItem extends Product {
 	protected Product product;
 	
 	public OrderItem() {
-		
+		super();
 	}
 
 	public OrderItem(Integer quantity, Double price, Product product) {
+		super();
 		this.quantity = quantity;
 		this.price = price;
 		this.product = product;
@@ -45,12 +46,9 @@ public class OrderItem extends Product {
 	{
 		return quantity * priceprod;
 	}
-	
+	 
 	@Override
 	public String toString() {
-		return  "\nRESUMO DO PEDIDO:\n"
-				+ "\nCliente: " + this.nome +" (" + super.birthDate + ") - " + this.email 
-				+ "\nOrder items:"
-				+ "\n" + nomeprod + ", $" + priceprod + ", Quantidade: " + quantity + ", Subtotal: $" + subTotal() ;
+		return   "\n" + nomeprod + ", $" + priceprod + ", Quantidade: " + quantity + ", Subtotal: $" + subTotal();
 	}
 }

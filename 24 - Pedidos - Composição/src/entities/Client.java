@@ -2,6 +2,7 @@ package entities;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Client {
@@ -10,11 +11,15 @@ public class Client {
 	protected String email;
 	protected Date birthDate;
 	
-	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	LocalDateTime dateTime = LocalDateTime.now();
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
+	LocalDateTime dataHoraAtual = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    String dataHoraFormatada = dataHoraAtual.format(formatter);
+
 	
 	public Client() {
-		
+		super();
 	}
 
 	public Client(String nome, String email, Date birthDate) {

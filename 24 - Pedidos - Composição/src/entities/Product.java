@@ -6,10 +6,11 @@ public class Product extends Client{
 	protected Double priceprod;
 	
 	public Product() {
-		
+		super();
 	}
 
 	public Product(String nomeprod, Double priceprod) {
+		super();
 		this.nomeprod = nomeprod;
 		this.priceprod = priceprod;
 	}
@@ -32,8 +33,7 @@ public class Product extends Client{
 	
 	@Override
 	public String toString() {
-		return  "\nRESUMO DO PEDIDO:\n"
-				+ "\nCliente: " + this.nome +" (" + super.birthDate + ") - " + this.email 
+		return  "\nCliente: " + this.nome +" (" + super.birthDate + ") - " + this.email 
 				+ "\nOrder items:"
 				+ "\n" + nomeprod + ", $" + priceprod + ", Quantidade: " ;
 	}
