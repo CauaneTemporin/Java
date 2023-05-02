@@ -3,7 +3,7 @@ package entities;
 public class Product {
 
 	protected String name;
-	protected Double price;
+	protected Double price = 0.0;
 	
 	
 	public Product() {
@@ -31,7 +31,7 @@ public class Product {
 	}
 	
 	public String priceTag() {
-		return "Produto: " +name + ", preço: $"+ price;
+		return "Produto: " +name + ", preço total: $"+ String.format("%.2f", price);
 	}
 	
 }
