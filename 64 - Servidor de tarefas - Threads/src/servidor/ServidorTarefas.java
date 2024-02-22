@@ -15,7 +15,10 @@ public class ServidorTarefas {
 			Socket socket = servidor.accept();
 			System.out.println("Aceitando novo cliente na porta: " + socket.getPort());
 
-			Thread.sleep(20000);
+			DistribuirTarefas distribuirTarefas = new DistribuirTarefas(socket);
+
+			Thread threadClient = new Thread(distribuirTarefas);
+			threadClient.start();
 		}
 	}
 }
