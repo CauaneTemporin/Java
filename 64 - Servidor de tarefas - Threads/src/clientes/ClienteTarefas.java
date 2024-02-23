@@ -6,22 +6,22 @@ import java.util.Scanner;
 
 public class ClienteTarefas {
 
-    public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 
-        Socket socket = new Socket("localhost", 12345);
-        System.out.println("conexão estabelecida");
+		Socket socket = new Socket("localhost", 12345);
 
-        //enviando comando c1 para servidor
-        PrintStream saida = new PrintStream(socket.getOutputStream());
-        saida.println("c1");        
+		System.out.println("Conexão Estabelecida");
 
-        //aguardando enter
-        Scanner teclado = new Scanner(System.in);
-        teclado.nextLine();
+		PrintStream saida = new PrintStream(socket.getOutputStream());
+		saida.println("c1");
 
-        //fechando recursos
-        saida.close();
-        teclado.close();
-        socket.close();
-    }
+		Scanner teclado = new Scanner(System.in);
+		teclado.nextLine();
+
+		saida.close();
+		teclado.close();
+		socket.close();
+
+	}
+
 }

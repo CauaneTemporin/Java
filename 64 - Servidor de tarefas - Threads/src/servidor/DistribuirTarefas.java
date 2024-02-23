@@ -5,27 +5,33 @@ import java.util.Scanner;
 
 public class DistribuirTarefas implements Runnable {
 
-    private Socket socket;
+	private Socket socket;
 
-    public DistribuirTarefas(Socket socket) {
-        this.socket = socket;
-    }
+	public DistribuirTarefas(Socket socket) {
+		this.socket = socket;
+	}
 
-    @Override
-    public void run() {
-        System.out.println("Distribuindo as tarefas para o cliente " +  socket);
+	@Override
+	public void run() {
 
-        try {
-            Scanner entradaCliente = new Scanner(socket.getInputStream());
+		try {
 
-            while (entradaCliente.hasNextLine()) {
-                String comando = entradaCliente.nextLine();
-                System.out.println(comando);
-            }
-            entradaCliente.close();
-        } catch (Exception e) {
-            throw new RuntimeException(e);       
-        }
+			System.out.println("Distribuindo as tarefas para o cliente "
+					+ socket);
 
-    }
+			Scanner entradaCliente = new Scanner(socket.getInputStream());
+
+			while (entradaCliente.hasNextLine()) {
+				String comando = entradaCliente.nextLine();
+				System.out.println(comando);
+			}
+
+			entradaCliente.close();
+
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
 }
